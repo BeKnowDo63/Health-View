@@ -7,47 +7,84 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Workout-->
+        <!--Nutrition-->
         <scene sceneID="qwN-IY-A76">
             <objects>
-                <viewController id="KLJ-Wp-uTa" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vc3" id="KLJ-Wp-uTa" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qgB-g4-Ks8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="qh6-kJ-Pcx"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Workout" image="Workout" id="0Fi-G6-IdM"/>
+                    <tabBarItem key="tabBarItem" title="Nutrition" image="cart" catalog="system" id="0Fi-G6-IdM"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PyB-WZ-pMl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-736" y="154"/>
         </scene>
-        <!--Today-->
+        <!--Weather-->
+        <scene sceneID="SH5-1A-mkP">
+            <objects>
+                <viewController storyboardIdentifier="vc1" id="cyX-ji-U5B" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vTd-lv-UtM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="fqT-O9-fRb"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Weather" image="sun.dust.fill" catalog="system" id="cPM-uc-A5f"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2RD-1y-M7F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2364" y="153"/>
+        </scene>
+        <!--Daily-->
         <scene sceneID="WRS-lf-S3Z">
             <objects>
-                <viewController id="ZwD-eS-wQx" customClass="ViewController" customModule="Health_View" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vc2" id="ZwD-eS-wQx" customClass="ViewController" customModule="Health_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uTm-CH-YE1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Kd-8q-xc2">
-                                <rect key="frame" x="157.5" y="766" width="99" height="30"/>
-                                <state key="normal" title="Update Labels"/>
-                                <connections>
-                                    <action selector="updateLabelButton:" destination="ZwD-eS-wQx" eventType="touchUpInside" id="9ZO-Nh-CFy"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ndi-iw-RfC" userLabel="Button View">
+                                <rect key="frame" x="20" y="742.5" width="374" height="60.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Kd-8q-xc2">
+                                        <rect key="frame" x="135" y="8" width="160" height="44.5"/>
+                                        <state key="normal" title="Update" image="blueButton"/>
+                                        <connections>
+                                            <action selector="updateLabelButton:" destination="ZwD-eS-wQx" eventType="touchUpInside" id="9ZO-Nh-CFy"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o1Y-kB-2gd">
+                                        <rect key="frame" x="159" y="20" width="56.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="7Kd-8q-xc2" firstAttribute="centerY" secondItem="o1Y-kB-2gd" secondAttribute="centerY" id="BId-n4-V8H"/>
+                                    <constraint firstItem="7Kd-8q-xc2" firstAttribute="top" secondItem="ndi-iw-RfC" secondAttribute="topMargin" id="Fq3-ep-F0z"/>
+                                    <constraint firstItem="7Kd-8q-xc2" firstAttribute="bottom" secondItem="ndi-iw-RfC" secondAttribute="bottomMargin" id="IjW-wX-vBo"/>
+                                    <constraint firstItem="o1Y-kB-2gd" firstAttribute="top" secondItem="ndi-iw-RfC" secondAttribute="top" constant="20" id="Ra2-gC-g8d"/>
+                                    <constraint firstAttribute="trailing" secondItem="7Kd-8q-xc2" secondAttribute="trailing" constant="79" id="aJ8-QX-ced"/>
+                                    <constraint firstItem="7Kd-8q-xc2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ndi-iw-RfC" secondAttribute="leading" constant="20" symbolic="YES" id="bNH-A5-42k"/>
+                                    <constraint firstItem="o1Y-kB-2gd" firstAttribute="centerX" secondItem="ndi-iw-RfC" secondAttribute="centerX" id="lRi-y7-tG2"/>
+                                </constraints>
+                            </view>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="DeP-3N-xhn">
-                                <rect key="frame" x="47" y="542" width="320" height="216"/>
+                                <rect key="frame" x="10" y="618" width="394" height="124.5"/>
                                 <connections>
                                     <action selector="datePickerChanged:" destination="ZwD-eS-wQx" eventType="valueChanged" id="9Z4-e6-QV5"/>
                                 </connections>
                             </datePicker>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="o6N-T7-Nb1">
-                                <rect key="frame" x="10" y="416" width="394" height="116"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="o6N-T7-Nb1" userLabel="Energy Stack View">
+                                <rect key="frame" x="10" y="492" width="394" height="116"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XVT-xp-ui5">
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XVT-xp-ui5" userLabel="Dietary View">
                                         <rect key="frame" x="0.0" y="0.0" width="394" height="29"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Dietary Calories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyj-9m-pgQ">
@@ -64,7 +101,7 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mmx-39-k8d">
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mmx-39-k8d" userLabel="Basal View">
                                         <rect key="frame" x="0.0" y="29" width="394" height="29"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Basal Energy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6b-13-nYr">
@@ -81,7 +118,7 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8xN-tE-R4s">
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8xN-tE-R4s" userLabel="Active View">
                                         <rect key="frame" x="0.0" y="58" width="394" height="29"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Active Calories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQZ-0u-eaP">
@@ -98,7 +135,7 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kzx-BB-plB">
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kzx-BB-plB" userLabel="Net Calorie View">
                                         <rect key="frame" x="0.0" y="87" width="394" height="29"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Net Calories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6l0-YD-gTh">
@@ -117,20 +154,169 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Skm-ZU-mLT" userLabel="Progress Stack View">
+                                <rect key="frame" x="0.0" y="234" width="414" height="250"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zsx-1i-WRK" userLabel="Net View">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Net Calories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3NE-zK-mbv">
+                                                <rect key="frame" x="8" y="11" width="127.5" height="28"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HhH-Sm-KcB">
+                                                <rect key="frame" x="256" y="24" width="150" height="2"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="150" id="Mre-eE-y8f"/>
+                                                </constraints>
+                                            </progressView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="3NE-zK-mbv" firstAttribute="centerY" secondItem="Zsx-1i-WRK" secondAttribute="centerY" id="SU9-WY-5iY"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3NE-zK-mbv" secondAttribute="trailing" constant="20" symbolic="YES" id="ckT-DB-2xg"/>
+                                            <constraint firstItem="3NE-zK-mbv" firstAttribute="centerY" secondItem="HhH-Sm-KcB" secondAttribute="centerY" id="hms-zw-cLJ"/>
+                                            <constraint firstItem="3NE-zK-mbv" firstAttribute="top" secondItem="Zsx-1i-WRK" secondAttribute="top" constant="11" id="o9H-gg-roC"/>
+                                            <constraint firstItem="3NE-zK-mbv" firstAttribute="leading" secondItem="Zsx-1i-WRK" secondAttribute="leadingMargin" id="oly-uJ-fvS"/>
+                                            <constraint firstItem="HhH-Sm-KcB" firstAttribute="trailing" secondItem="Zsx-1i-WRK" secondAttribute="trailingMargin" id="pcb-PM-VVc"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jXF-Mh-gxA" userLabel="Daily Calories View">
+                                        <rect key="frame" x="0.0" y="50" width="414" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Calories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqa-1c-4h7">
+                                                <rect key="frame" x="8" y="11" width="142" height="28"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MdZ-7d-tes">
+                                                <rect key="frame" x="256" y="24" width="150" height="2"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="150" id="a4B-XW-pbb"/>
+                                                </constraints>
+                                            </progressView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="iqa-1c-4h7" firstAttribute="leading" secondItem="jXF-Mh-gxA" secondAttribute="leadingMargin" id="Eeo-ah-bfD"/>
+                                            <constraint firstItem="iqa-1c-4h7" firstAttribute="top" secondItem="jXF-Mh-gxA" secondAttribute="top" constant="11" id="X4U-bn-qW8"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iqa-1c-4h7" secondAttribute="trailing" constant="20" symbolic="YES" id="dV9-tQ-Y1n"/>
+                                            <constraint firstItem="MdZ-7d-tes" firstAttribute="trailing" secondItem="jXF-Mh-gxA" secondAttribute="trailingMargin" id="te5-rs-vCM"/>
+                                            <constraint firstItem="iqa-1c-4h7" firstAttribute="centerY" secondItem="jXF-Mh-gxA" secondAttribute="centerY" id="z6h-s0-QV8"/>
+                                            <constraint firstItem="iqa-1c-4h7" firstAttribute="centerY" secondItem="MdZ-7d-tes" secondAttribute="centerY" id="zwe-fP-5zf"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IcN-Xg-hEH" userLabel="Activities View">
+                                        <rect key="frame" x="0.0" y="100" width="414" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAh-6r-a2i">
+                                                <rect key="frame" x="8" y="11" width="95" height="28"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dC2-kL-2Wq">
+                                                <rect key="frame" x="256" y="24" width="150" height="2"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="150" id="U3J-vm-H4e"/>
+                                                </constraints>
+                                            </progressView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gAh-6r-a2i" secondAttribute="trailing" constant="20" symbolic="YES" id="6Na-Ig-LjP"/>
+                                            <constraint firstItem="gAh-6r-a2i" firstAttribute="leading" secondItem="IcN-Xg-hEH" secondAttribute="leadingMargin" id="AJU-uG-5KO"/>
+                                            <constraint firstItem="gAh-6r-a2i" firstAttribute="centerY" secondItem="IcN-Xg-hEH" secondAttribute="centerY" id="K1t-KW-wOP"/>
+                                            <constraint firstItem="gAh-6r-a2i" firstAttribute="centerY" secondItem="dC2-kL-2Wq" secondAttribute="centerY" id="Mug-LR-RhM"/>
+                                            <constraint firstItem="gAh-6r-a2i" firstAttribute="top" secondItem="IcN-Xg-hEH" secondAttribute="top" constant="11" id="vDz-lD-V9X"/>
+                                            <constraint firstItem="dC2-kL-2Wq" firstAttribute="trailing" secondItem="IcN-Xg-hEH" secondAttribute="trailingMargin" id="wba-dP-GjN"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uvv-WM-LdJ" userLabel="Sleep View">
+                                        <rect key="frame" x="0.0" y="150" width="414" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sleep" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="se7-XI-Quz">
+                                                <rect key="frame" x="8" y="11" width="59" height="28"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DGO-GY-4UM">
+                                                <rect key="frame" x="256" y="24" width="150" height="2"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="150" id="wpd-Mn-n7u"/>
+                                                </constraints>
+                                            </progressView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="se7-XI-Quz" firstAttribute="top" secondItem="uvv-WM-LdJ" secondAttribute="top" constant="11" id="2en-uH-KUy"/>
+                                            <constraint firstItem="se7-XI-Quz" firstAttribute="centerY" secondItem="DGO-GY-4UM" secondAttribute="centerY" id="HEL-do-Nmq"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="se7-XI-Quz" secondAttribute="trailing" constant="20" symbolic="YES" id="gQl-9w-hAV"/>
+                                            <constraint firstItem="se7-XI-Quz" firstAttribute="leading" secondItem="uvv-WM-LdJ" secondAttribute="leadingMargin" id="iwi-4L-0Sk"/>
+                                            <constraint firstItem="DGO-GY-4UM" firstAttribute="trailing" secondItem="uvv-WM-LdJ" secondAttribute="trailingMargin" id="mVY-i0-Uw6"/>
+                                            <constraint firstItem="se7-XI-Quz" firstAttribute="centerY" secondItem="uvv-WM-LdJ" secondAttribute="centerY" id="vyQ-3w-94R"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="byH-6i-Q0F" userLabel="Meditation View">
+                                        <rect key="frame" x="0.0" y="200" width="414" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meditation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RrX-4Q-ov8">
+                                                <rect key="frame" x="8" y="11" width="110.5" height="28"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wc5-6O-cvE">
+                                                <rect key="frame" x="256" y="24" width="150" height="2"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="150" id="bJw-VO-EkS"/>
+                                                </constraints>
+                                            </progressView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="RrX-4Q-ov8" firstAttribute="top" secondItem="byH-6i-Q0F" secondAttribute="top" constant="11" id="dQR-mZ-n5u"/>
+                                            <constraint firstItem="RrX-4Q-ov8" firstAttribute="centerY" secondItem="wc5-6O-cvE" secondAttribute="centerY" id="eAs-3v-8xX"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="RrX-4Q-ov8" secondAttribute="trailing" constant="20" symbolic="YES" id="flo-ka-Vav"/>
+                                            <constraint firstItem="RrX-4Q-ov8" firstAttribute="centerY" secondItem="byH-6i-Q0F" secondAttribute="centerY" id="jSa-zm-j9M"/>
+                                            <constraint firstItem="RrX-4Q-ov8" firstAttribute="leading" secondItem="byH-6i-Q0F" secondAttribute="leadingMargin" id="pNO-fn-lLw"/>
+                                            <constraint firstItem="wc5-6O-cvE" firstAttribute="trailing" secondItem="byH-6i-Q0F" secondAttribute="trailingMargin" id="wjK-xD-19J"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="uvv-WM-LdJ" firstAttribute="top" secondItem="IcN-Xg-hEH" secondAttribute="bottom" id="5dc-XX-6bJ"/>
+                                    <constraint firstItem="IcN-Xg-hEH" firstAttribute="centerY" secondItem="Skm-ZU-mLT" secondAttribute="centerY" id="VLn-PT-DMu"/>
+                                    <constraint firstItem="jXF-Mh-gxA" firstAttribute="top" secondItem="Skm-ZU-mLT" secondAttribute="top" constant="50" id="Vgb-R1-McO"/>
+                                    <constraint firstItem="byH-6i-Q0F" firstAttribute="top" secondItem="Skm-ZU-mLT" secondAttribute="top" constant="200" id="od1-d0-Ns4"/>
+                                    <constraint firstItem="uvv-WM-LdJ" firstAttribute="top" secondItem="Skm-ZU-mLT" secondAttribute="top" constant="150" id="v7L-LQ-MJN"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="o6N-T7-Nb1" firstAttribute="leading" secondItem="bgI-vc-YeC" secondAttribute="leading" constant="10" id="1Aa-dg-Thv"/>
-                            <constraint firstItem="DeP-3N-xhn" firstAttribute="top" secondItem="o6N-T7-Nb1" secondAttribute="bottom" constant="10" id="Ght-kF-2qJ"/>
-                            <constraint firstItem="bgI-vc-YeC" firstAttribute="trailing" secondItem="o6N-T7-Nb1" secondAttribute="trailing" constant="10" id="Hsp-Q0-3Y9"/>
-                            <constraint firstItem="DeP-3N-xhn" firstAttribute="centerX" secondItem="uTm-CH-YE1" secondAttribute="centerX" id="RIh-4y-t39"/>
-                            <constraint firstItem="bgI-vc-YeC" firstAttribute="bottom" secondItem="7Kd-8q-xc2" secondAttribute="bottom" constant="17" id="VJg-VP-olk"/>
-                            <constraint firstItem="7Kd-8q-xc2" firstAttribute="centerX" secondItem="uTm-CH-YE1" secondAttribute="centerX" id="fRJ-m3-29a"/>
-                            <constraint firstItem="7Kd-8q-xc2" firstAttribute="top" secondItem="DeP-3N-xhn" secondAttribute="bottom" constant="8" id="xvV-Oy-Ats"/>
+                            <constraint firstItem="o6N-T7-Nb1" firstAttribute="leading" secondItem="DeP-3N-xhn" secondAttribute="leading" id="22Y-ME-8yu"/>
+                            <constraint firstItem="DeP-3N-xhn" firstAttribute="centerX" secondItem="ndi-iw-RfC" secondAttribute="centerX" id="5Xa-ON-OD5"/>
+                            <constraint firstItem="Skm-ZU-mLT" firstAttribute="top" secondItem="bgI-vc-YeC" secondAttribute="top" constant="190" id="8d3-C2-FHp"/>
+                            <constraint firstItem="ndi-iw-RfC" firstAttribute="leading" secondItem="uTm-CH-YE1" secondAttribute="leadingMargin" id="ATE-PL-ewR"/>
+                            <constraint firstItem="o6N-T7-Nb1" firstAttribute="top" secondItem="Skm-ZU-mLT" secondAttribute="bottom" constant="8" id="Aff-q1-O4E"/>
+                            <constraint firstItem="o6N-T7-Nb1" firstAttribute="trailing" secondItem="DeP-3N-xhn" secondAttribute="trailing" id="DRm-Yy-LdL"/>
+                            <constraint firstItem="o6N-T7-Nb1" firstAttribute="leading" secondItem="bgI-vc-YeC" secondAttribute="leading" constant="10" id="ILH-EI-AgK"/>
+                            <constraint firstItem="ndi-iw-RfC" firstAttribute="trailing" secondItem="uTm-CH-YE1" secondAttribute="trailingMargin" id="NPh-5c-D2B"/>
+                            <constraint firstItem="Skm-ZU-mLT" firstAttribute="leading" secondItem="bgI-vc-YeC" secondAttribute="leading" id="Usm-I3-bnR"/>
+                            <constraint firstItem="bgI-vc-YeC" firstAttribute="bottom" secondItem="ndi-iw-RfC" secondAttribute="bottom" constant="10" id="fNi-9c-nnd"/>
+                            <constraint firstItem="DeP-3N-xhn" firstAttribute="top" secondItem="o6N-T7-Nb1" secondAttribute="bottom" constant="10" id="mJX-uX-ie3"/>
+                            <constraint firstItem="o6N-T7-Nb1" firstAttribute="top" secondItem="uTm-CH-YE1" secondAttribute="top" constant="492" id="pQ1-EN-rr4"/>
+                            <constraint firstItem="ndi-iw-RfC" firstAttribute="top" secondItem="DeP-3N-xhn" secondAttribute="bottom" id="rc0-Og-gSi"/>
+                            <constraint firstItem="Skm-ZU-mLT" firstAttribute="centerX" secondItem="o6N-T7-Nb1" secondAttribute="centerX" id="yFe-xf-T1C"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bgI-vc-YeC"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Today" image="Today" id="SJm-8g-BA0"/>
+                    <tabBarItem key="tabBarItem" title="Daily" image="Today" id="SJm-8g-BA0"/>
                     <connections>
                         <outlet property="activeCalorieLabel" destination="D1v-EY-IBy" id="CZ2-iH-rgc"/>
                         <outlet property="basalEnergyLabel" destination="2zj-nZ-dYL" id="fIO-pb-cTE"/>
@@ -153,6 +339,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <segue destination="cyX-ji-U5B" kind="relationship" relationship="viewControllers" id="8Ej-QR-XA8"/>
                         <segue destination="ZwD-eS-wQx" kind="relationship" relationship="viewControllers" id="F02-L5-sCT"/>
                         <segue destination="KLJ-Wp-uTa" kind="relationship" relationship="viewControllers" id="bdY-Wa-7vD"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="7BQ-y9-cSq"/>
@@ -162,17 +349,17 @@
             </objects>
             <point key="canvasLocation" x="-736" y="-672"/>
         </scene>
-        <!--Summary-->
+        <!--Goals-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vc4" id="BYZ-38-t0r" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Summary" image="Summary" id="bJa-MB-6Gi"/>
+                    <tabBarItem key="tabBarItem" title="Goals" image="star.fill" catalog="system" id="bJa-MB-6Gi"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -180,8 +367,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Summary" width="35" height="35"/>
         <image name="Today" width="35" height="35"/>
-        <image name="Workout" width="35" height="35"/>
+        <image name="blueButton" width="100" height="45"/>
+        <image name="cart" catalog="system" width="128" height="102"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <image name="sun.dust.fill" catalog="system" width="128" height="119"/>
     </resources>
 </document>
