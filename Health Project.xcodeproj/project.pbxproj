@@ -19,7 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0A69AD65243E54EC00DEF837 /* Health View.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Health View.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A69AD65243E54EC00DEF837 /* Health Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Health Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A69AD68243E54EC00DEF837 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A69AD6A243E54EC00DEF837 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0A69AD6C243E54EC00DEF837 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -27,7 +27,7 @@
 		0A69AD71243E54F000DEF837 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A69AD74243E54F000DEF837 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A69AD76243E54F000DEF837 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0A69AD7C243E558D00DEF837 /* Health View.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Health View.entitlements"; sourceTree = "<group>"; };
+		0A69AD7C243E558D00DEF837 /* Health Project.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Health Project.entitlements"; sourceTree = "<group>"; };
 		0A69AD7E243E558D00DEF837 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		0A69AD83243E561900DEF837 /* HealthKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKit.swift; sourceTree = "<group>"; };
 		0A69AD85243E64BE00DEF837 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 		0A69AD5C243E54EC00DEF837 = {
 			isa = PBXGroup;
 			children = (
-				0A69AD67243E54EC00DEF837 /* Health View */,
+				0A69AD67243E54EC00DEF837 /* Health Project */,
 				0A69AD66243E54EC00DEF837 /* Products */,
 				0A69AD7D243E558D00DEF837 /* Frameworks */,
 			);
@@ -57,15 +57,15 @@
 		0A69AD66243E54EC00DEF837 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0A69AD65243E54EC00DEF837 /* Health View.app */,
+				0A69AD65243E54EC00DEF837 /* Health Project.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0A69AD67243E54EC00DEF837 /* Health View */ = {
+		0A69AD67243E54EC00DEF837 /* Health Project */ = {
 			isa = PBXGroup;
 			children = (
-				0A69AD7C243E558D00DEF837 /* Health View.entitlements */,
+				0A69AD7C243E558D00DEF837 /* Health Project.entitlements */,
 				0A69AD68243E54EC00DEF837 /* AppDelegate.swift */,
 				0A69AD6A243E54EC00DEF837 /* SceneDelegate.swift */,
 				0A69AD82243E55E800DEF837 /* Model */,
@@ -74,7 +74,7 @@
 				0A69AD71243E54F000DEF837 /* Assets.xcassets */,
 				0A69AD76243E54F000DEF837 /* Info.plist */,
 			);
-			path = "Health View";
+			path = "Health Project";
 			sourceTree = "<group>";
 		};
 		0A69AD7D243E558D00DEF837 /* Frameworks */ = {
@@ -114,9 +114,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0A69AD64243E54EC00DEF837 /* Health View */ = {
+		0A69AD64243E54EC00DEF837 /* Health Project */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0A69AD79243E54F000DEF837 /* Build configuration list for PBXNativeTarget "Health View" */;
+			buildConfigurationList = 0A69AD79243E54F000DEF837 /* Build configuration list for PBXNativeTarget "Health Project" */;
 			buildPhases = (
 				0A69AD61243E54EC00DEF837 /* Sources */,
 				0A69AD62243E54EC00DEF837 /* Frameworks */,
@@ -126,9 +126,9 @@
 			);
 			dependencies = (
 			);
-			name = "Health View";
+			name = "Health Project";
 			productName = "Health View";
-			productReference = 0A69AD65243E54EC00DEF837 /* Health View.app */;
+			productReference = 0A69AD65243E54EC00DEF837 /* Health Project.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -146,7 +146,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0A69AD60243E54EC00DEF837 /* Build configuration list for PBXProject "Health View" */;
+			buildConfigurationList = 0A69AD60243E54EC00DEF837 /* Build configuration list for PBXProject "Health Project" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -159,7 +159,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0A69AD64243E54EC00DEF837 /* Health View */,
+				0A69AD64243E54EC00DEF837 /* Health Project */,
 			);
 		};
 /* End PBXProject section */
@@ -330,17 +330,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Health View/Health View.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Health Project/Health Project.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 002;
 				DEVELOPMENT_TEAM = 46R37HHMMK;
-				INFOPLIST_FILE = "Health View/Info.plist";
+				INFOPLIST_FILE = "Health Project/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kdc..Health-View";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.BeKnowDo63.Health-Project";
+				PRODUCT_NAME = "Health Project";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -350,17 +351,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Health View/Health View.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Health Project/Health Project.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 002;
 				DEVELOPMENT_TEAM = 46R37HHMMK;
-				INFOPLIST_FILE = "Health View/Info.plist";
+				INFOPLIST_FILE = "Health Project/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kdc..Health-View";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.BeKnowDo63.Health-Project";
+				PRODUCT_NAME = "Health Project";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -369,7 +371,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0A69AD60243E54EC00DEF837 /* Build configuration list for PBXProject "Health View" */ = {
+		0A69AD60243E54EC00DEF837 /* Build configuration list for PBXProject "Health Project" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0A69AD77243E54F000DEF837 /* Debug */,
@@ -378,7 +380,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0A69AD79243E54F000DEF837 /* Build configuration list for PBXNativeTarget "Health View" */ = {
+		0A69AD79243E54F000DEF837 /* Build configuration list for PBXNativeTarget "Health Project" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0A69AD7A243E54F000DEF837 /* Debug */,

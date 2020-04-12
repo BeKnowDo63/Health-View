@@ -21,9 +21,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSHealthShareUsageDescription</key>
-	<string>Health View needs to read your Health App information to function properly and to provide the best user experience.</string>
+	<string>Health Project needs to read your Health App information to function properly and to provide the best user experience.</string>
 	<key>NSHealthUpdateUsageDescription</key>
-	<string>Health View needs to write information to your Health App to record your workouts.</string>
+	<string>Health Project needs to write information to your Health App to record your workouts.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
