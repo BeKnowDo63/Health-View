@@ -12,6 +12,7 @@ class HealthKit {
     var userActiveEnergy : Double = 0.0
     var userBasalEnergy : Double = 0.0
     var userStepCount : Double = 0.0
+    var userMindfulMinutes : Double = 0.0
 
     
     //MARK: - Steps to access the Apple Health App Data.
@@ -59,6 +60,7 @@ class HealthKit {
                                                         HKSampleType.quantityType(forIdentifier: .dietaryFiber)!,
                                                         HKSampleType.quantityType(forIdentifier: .dietarySodium)!,
                                                         HKSampleType.quantityType(forIdentifier: .bodyFatPercentage)!,
+                                                        HKSampleType.categoryType(forIdentifier: .mindfulSession)!,
                                                         HKSampleType.characteristicType(forIdentifier: .dateOfBirth)!]
             
             //Check authorization from Healthkit and if it exists, let the user know.  If the check fails, let the user know.
@@ -239,16 +241,17 @@ class HealthKit {
                                                 let quantitySamples = sample as? [HKQuantitySample] else {
                                                     print("Something went wrong: \(String(describing: error))")
                                                     return
-                                            }
+                                                    }
                                             
                                             let total = quantitySamples.reduce(0.0) { $0 + $1.quantity.doubleValue(for: HKUnit.kilocalorie()) }
                                             DispatchQueue.main.async {
                                                 self.userDietaryEnergy = total
-                                            }
+                                                }
         }
         HKHealthStore().execute(dietaryEnergyQuery)
+
     }
-    
+     
     //MARK: - Read Active Energy
     func readActiveEnergy(date: Date) {
         guard let activeEnergy = HKSampleType.quantityType(forIdentifier: .activeEnergyBurned) else {
@@ -312,6 +315,41 @@ class HealthKit {
         }
         HKHealthStore().execute(activeEnergyQuery)
     }
-
     
+    //MARK: - Read Mindful Minutes
+    func readMindfulMinutes(date: Date) {
+        
+        guard let mindfulMinutes = HKSampleType.categoryType(forIdentifier: .mindfulSession) else {
+            print("Sample type not available")
+            return
+        }
+        
+        let startDate = convertStartDate(StartDate: date)
+        let endDate = convertEndDate(EndDate: date)
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictStartDate)
+        
+        let mindfulMinutesQuery = HKSampleQuery(sampleType: mindfulMinutes,
+                                                predicate: predicate,
+                                                limit: HKObjectQueryNoLimit,
+                                                sortDescriptors: nil) {
+                                                    (query, samples, error) in
+                                            
+                                        guard
+                                            error == nil,
+                                        let quantitySamples = samples as? [HKQuantitySample] else {
+                                                print("Something went wrong: \(String(describing: error))")
+                                                return
+                                        }
+                                        
+                                            let total = quantitySamples.reduce(0.0) { $0 + $1.quantity.doubleValue(for: HKUnit.minute()) }
+                                        DispatchQueue.main.async {
+                                            self.userMindfulMinutes = total
+                                            print("userMindfulMinutes = \(self.userMindfulMinutes)")
+                                        }
+        
+        }
+        HKHealthStore().execute(mindfulMinutesQuery)
+    }
+
+
 }

@@ -12,6 +12,9 @@ class User: UIViewController {
     var userAge : Int = 0
     var userWeightInPounds : Double = 0.0
     var userWeightInKilo : Double = 0.0
+    var userActivityGoal : Double = 600.0
+    var userDietaryGoal : Double = 1400.0
+    var userNetCalorieGoal : Double = -750.0
     
     //MARK: - Get Age
     func loadGetAge(){

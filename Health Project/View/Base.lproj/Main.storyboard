@@ -66,13 +66,13 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstItem="7Kd-8q-xc2" firstAttribute="centerY" secondItem="o1Y-kB-2gd" secondAttribute="centerY" id="BId-n4-V8H"/>
-                                    <constraint firstItem="7Kd-8q-xc2" firstAttribute="top" secondItem="ndi-iw-RfC" secondAttribute="topMargin" id="Fq3-ep-F0z"/>
-                                    <constraint firstItem="7Kd-8q-xc2" firstAttribute="bottom" secondItem="ndi-iw-RfC" secondAttribute="bottomMargin" id="IjW-wX-vBo"/>
-                                    <constraint firstItem="o1Y-kB-2gd" firstAttribute="top" secondItem="ndi-iw-RfC" secondAttribute="top" constant="20" id="Ra2-gC-g8d"/>
-                                    <constraint firstAttribute="trailing" secondItem="7Kd-8q-xc2" secondAttribute="trailing" constant="79" id="aJ8-QX-ced"/>
-                                    <constraint firstItem="7Kd-8q-xc2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ndi-iw-RfC" secondAttribute="leading" constant="20" symbolic="YES" id="bNH-A5-42k"/>
-                                    <constraint firstItem="o1Y-kB-2gd" firstAttribute="centerX" secondItem="ndi-iw-RfC" secondAttribute="centerX" id="lRi-y7-tG2"/>
+                                    <constraint firstItem="7Kd-8q-xc2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ndi-iw-RfC" secondAttribute="leading" constant="20" symbolic="YES" id="2vJ-0Q-65C"/>
+                                    <constraint firstItem="o1Y-kB-2gd" firstAttribute="centerX" secondItem="ndi-iw-RfC" secondAttribute="centerX" id="4cw-hU-gh8"/>
+                                    <constraint firstAttribute="trailing" secondItem="7Kd-8q-xc2" secondAttribute="trailing" constant="79" id="Dcn-kX-T9L"/>
+                                    <constraint firstItem="7Kd-8q-xc2" firstAttribute="bottom" secondItem="ndi-iw-RfC" secondAttribute="bottomMargin" id="Syk-g2-3ks"/>
+                                    <constraint firstItem="7Kd-8q-xc2" firstAttribute="centerY" secondItem="o1Y-kB-2gd" secondAttribute="centerY" id="auM-fr-Ppl"/>
+                                    <constraint firstItem="o1Y-kB-2gd" firstAttribute="top" secondItem="ndi-iw-RfC" secondAttribute="top" constant="20" id="mqk-I7-IA7"/>
+                                    <constraint firstItem="7Kd-8q-xc2" firstAttribute="top" secondItem="ndi-iw-RfC" secondAttribute="topMargin" id="sbk-mp-6cN"/>
                                 </constraints>
                             </view>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="DeP-3N-xhn">
@@ -169,18 +169,18 @@
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HhH-Sm-KcB">
                                                 <rect key="frame" x="256" y="24" width="150" height="2"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="150" id="Mre-eE-y8f"/>
+                                                    <constraint firstAttribute="width" constant="150" id="eyR-6s-75N"/>
                                                 </constraints>
                                             </progressView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstItem="3NE-zK-mbv" firstAttribute="centerY" secondItem="Zsx-1i-WRK" secondAttribute="centerY" id="SU9-WY-5iY"/>
-                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3NE-zK-mbv" secondAttribute="trailing" constant="20" symbolic="YES" id="ckT-DB-2xg"/>
-                                            <constraint firstItem="3NE-zK-mbv" firstAttribute="centerY" secondItem="HhH-Sm-KcB" secondAttribute="centerY" id="hms-zw-cLJ"/>
-                                            <constraint firstItem="3NE-zK-mbv" firstAttribute="top" secondItem="Zsx-1i-WRK" secondAttribute="top" constant="11" id="o9H-gg-roC"/>
-                                            <constraint firstItem="3NE-zK-mbv" firstAttribute="leading" secondItem="Zsx-1i-WRK" secondAttribute="leadingMargin" id="oly-uJ-fvS"/>
-                                            <constraint firstItem="HhH-Sm-KcB" firstAttribute="trailing" secondItem="Zsx-1i-WRK" secondAttribute="trailingMargin" id="pcb-PM-VVc"/>
+                                            <constraint firstItem="HhH-Sm-KcB" firstAttribute="top" secondItem="Zsx-1i-WRK" secondAttribute="top" constant="24" id="6pQ-xk-3B3"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3NE-zK-mbv" secondAttribute="trailing" constant="20" symbolic="YES" id="Bbt-FR-8U1"/>
+                                            <constraint firstItem="3NE-zK-mbv" firstAttribute="centerY" secondItem="Zsx-1i-WRK" secondAttribute="centerY" id="Taw-w5-osw"/>
+                                            <constraint firstItem="3NE-zK-mbv" firstAttribute="leading" secondItem="Zsx-1i-WRK" secondAttribute="leadingMargin" id="WqA-qp-2d5"/>
+                                            <constraint firstItem="HhH-Sm-KcB" firstAttribute="trailing" secondItem="Zsx-1i-WRK" secondAttribute="trailingMargin" id="ZSf-Cv-tz7"/>
+                                            <constraint firstItem="3NE-zK-mbv" firstAttribute="top" secondItem="Zsx-1i-WRK" secondAttribute="top" constant="11" id="h0r-2o-hz0"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jXF-Mh-gxA" userLabel="Daily Calories View">
@@ -195,18 +195,19 @@
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MdZ-7d-tes">
                                                 <rect key="frame" x="256" y="24" width="150" height="2"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="150" id="a4B-XW-pbb"/>
+                                                    <constraint firstAttribute="width" constant="150" id="gYg-eX-m8a"/>
                                                 </constraints>
                                             </progressView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstItem="iqa-1c-4h7" firstAttribute="leading" secondItem="jXF-Mh-gxA" secondAttribute="leadingMargin" id="Eeo-ah-bfD"/>
-                                            <constraint firstItem="iqa-1c-4h7" firstAttribute="top" secondItem="jXF-Mh-gxA" secondAttribute="top" constant="11" id="X4U-bn-qW8"/>
-                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iqa-1c-4h7" secondAttribute="trailing" constant="20" symbolic="YES" id="dV9-tQ-Y1n"/>
-                                            <constraint firstItem="MdZ-7d-tes" firstAttribute="trailing" secondItem="jXF-Mh-gxA" secondAttribute="trailingMargin" id="te5-rs-vCM"/>
-                                            <constraint firstItem="iqa-1c-4h7" firstAttribute="centerY" secondItem="jXF-Mh-gxA" secondAttribute="centerY" id="z6h-s0-QV8"/>
-                                            <constraint firstItem="iqa-1c-4h7" firstAttribute="centerY" secondItem="MdZ-7d-tes" secondAttribute="centerY" id="zwe-fP-5zf"/>
+                                            <constraint firstItem="MdZ-7d-tes" firstAttribute="top" secondItem="jXF-Mh-gxA" secondAttribute="top" constant="24" id="0on-g2-d6h"/>
+                                            <constraint firstItem="iqa-1c-4h7" firstAttribute="centerY" secondItem="jXF-Mh-gxA" secondAttribute="centerY" id="4f1-7U-qIX"/>
+                                            <constraint firstItem="iqa-1c-4h7" firstAttribute="centerY" secondItem="MdZ-7d-tes" secondAttribute="centerY" id="PM5-Bu-m40"/>
+                                            <constraint firstItem="iqa-1c-4h7" firstAttribute="leading" secondItem="jXF-Mh-gxA" secondAttribute="leadingMargin" id="cl6-uO-IgN"/>
+                                            <constraint firstItem="MdZ-7d-tes" firstAttribute="trailing" secondItem="jXF-Mh-gxA" secondAttribute="trailingMargin" id="df7-hc-P56"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iqa-1c-4h7" secondAttribute="trailing" constant="20" symbolic="YES" id="ojM-Ge-Y3I"/>
+                                            <constraint firstItem="iqa-1c-4h7" firstAttribute="top" secondItem="jXF-Mh-gxA" secondAttribute="top" constant="11" id="oxe-T2-yz9"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IcN-Xg-hEH" userLabel="Activities View">
@@ -221,18 +222,19 @@
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dC2-kL-2Wq">
                                                 <rect key="frame" x="256" y="24" width="150" height="2"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="150" id="U3J-vm-H4e"/>
+                                                    <constraint firstAttribute="width" constant="150" id="Ds5-TU-WH8"/>
                                                 </constraints>
                                             </progressView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gAh-6r-a2i" secondAttribute="trailing" constant="20" symbolic="YES" id="6Na-Ig-LjP"/>
-                                            <constraint firstItem="gAh-6r-a2i" firstAttribute="leading" secondItem="IcN-Xg-hEH" secondAttribute="leadingMargin" id="AJU-uG-5KO"/>
-                                            <constraint firstItem="gAh-6r-a2i" firstAttribute="centerY" secondItem="IcN-Xg-hEH" secondAttribute="centerY" id="K1t-KW-wOP"/>
-                                            <constraint firstItem="gAh-6r-a2i" firstAttribute="centerY" secondItem="dC2-kL-2Wq" secondAttribute="centerY" id="Mug-LR-RhM"/>
-                                            <constraint firstItem="gAh-6r-a2i" firstAttribute="top" secondItem="IcN-Xg-hEH" secondAttribute="top" constant="11" id="vDz-lD-V9X"/>
-                                            <constraint firstItem="dC2-kL-2Wq" firstAttribute="trailing" secondItem="IcN-Xg-hEH" secondAttribute="trailingMargin" id="wba-dP-GjN"/>
+                                            <constraint firstItem="gAh-6r-a2i" firstAttribute="centerY" secondItem="dC2-kL-2Wq" secondAttribute="centerY" id="9Tv-YD-kvg"/>
+                                            <constraint firstItem="gAh-6r-a2i" firstAttribute="centerY" secondItem="IcN-Xg-hEH" secondAttribute="centerY" id="I2V-fy-fqj"/>
+                                            <constraint firstItem="gAh-6r-a2i" firstAttribute="leading" secondItem="IcN-Xg-hEH" secondAttribute="leadingMargin" id="QlV-qX-3Qu"/>
+                                            <constraint firstItem="dC2-kL-2Wq" firstAttribute="top" secondItem="IcN-Xg-hEH" secondAttribute="top" constant="24" id="dDw-e3-3rK"/>
+                                            <constraint firstItem="dC2-kL-2Wq" firstAttribute="trailing" secondItem="IcN-Xg-hEH" secondAttribute="trailingMargin" id="kVk-If-mar"/>
+                                            <constraint firstItem="gAh-6r-a2i" firstAttribute="top" secondItem="IcN-Xg-hEH" secondAttribute="top" constant="11" id="mUg-PM-Z7u"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gAh-6r-a2i" secondAttribute="trailing" constant="20" symbolic="YES" id="xqv-Pn-2FF"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uvv-WM-LdJ" userLabel="Sleep View">
@@ -247,18 +249,19 @@
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DGO-GY-4UM">
                                                 <rect key="frame" x="256" y="24" width="150" height="2"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="150" id="wpd-Mn-n7u"/>
+                                                    <constraint firstAttribute="width" constant="150" id="dp2-rk-hoH"/>
                                                 </constraints>
                                             </progressView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstItem="se7-XI-Quz" firstAttribute="top" secondItem="uvv-WM-LdJ" secondAttribute="top" constant="11" id="2en-uH-KUy"/>
-                                            <constraint firstItem="se7-XI-Quz" firstAttribute="centerY" secondItem="DGO-GY-4UM" secondAttribute="centerY" id="HEL-do-Nmq"/>
-                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="se7-XI-Quz" secondAttribute="trailing" constant="20" symbolic="YES" id="gQl-9w-hAV"/>
-                                            <constraint firstItem="se7-XI-Quz" firstAttribute="leading" secondItem="uvv-WM-LdJ" secondAttribute="leadingMargin" id="iwi-4L-0Sk"/>
-                                            <constraint firstItem="DGO-GY-4UM" firstAttribute="trailing" secondItem="uvv-WM-LdJ" secondAttribute="trailingMargin" id="mVY-i0-Uw6"/>
-                                            <constraint firstItem="se7-XI-Quz" firstAttribute="centerY" secondItem="uvv-WM-LdJ" secondAttribute="centerY" id="vyQ-3w-94R"/>
+                                            <constraint firstItem="se7-XI-Quz" firstAttribute="leading" secondItem="uvv-WM-LdJ" secondAttribute="leadingMargin" id="0K5-Md-jzC"/>
+                                            <constraint firstItem="DGO-GY-4UM" firstAttribute="trailing" secondItem="uvv-WM-LdJ" secondAttribute="trailingMargin" id="HRm-QR-ecs"/>
+                                            <constraint firstItem="se7-XI-Quz" firstAttribute="centerY" secondItem="DGO-GY-4UM" secondAttribute="centerY" id="RyI-CP-AgX"/>
+                                            <constraint firstItem="DGO-GY-4UM" firstAttribute="top" secondItem="uvv-WM-LdJ" secondAttribute="top" constant="24" id="TJ2-pF-zha"/>
+                                            <constraint firstItem="se7-XI-Quz" firstAttribute="top" secondItem="uvv-WM-LdJ" secondAttribute="top" constant="11" id="V5M-Ia-C5n"/>
+                                            <constraint firstItem="se7-XI-Quz" firstAttribute="centerY" secondItem="uvv-WM-LdJ" secondAttribute="centerY" id="lo0-mx-NSH"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="se7-XI-Quz" secondAttribute="trailing" constant="20" symbolic="YES" id="qsr-0T-Xtl"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="byH-6i-Q0F" userLabel="Meditation View">
@@ -273,56 +276,59 @@
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wc5-6O-cvE">
                                                 <rect key="frame" x="256" y="24" width="150" height="2"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="150" id="bJw-VO-EkS"/>
+                                                    <constraint firstAttribute="width" constant="150" id="mfo-S9-hdO"/>
                                                 </constraints>
                                             </progressView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstItem="RrX-4Q-ov8" firstAttribute="top" secondItem="byH-6i-Q0F" secondAttribute="top" constant="11" id="dQR-mZ-n5u"/>
-                                            <constraint firstItem="RrX-4Q-ov8" firstAttribute="centerY" secondItem="wc5-6O-cvE" secondAttribute="centerY" id="eAs-3v-8xX"/>
-                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="RrX-4Q-ov8" secondAttribute="trailing" constant="20" symbolic="YES" id="flo-ka-Vav"/>
-                                            <constraint firstItem="RrX-4Q-ov8" firstAttribute="centerY" secondItem="byH-6i-Q0F" secondAttribute="centerY" id="jSa-zm-j9M"/>
-                                            <constraint firstItem="RrX-4Q-ov8" firstAttribute="leading" secondItem="byH-6i-Q0F" secondAttribute="leadingMargin" id="pNO-fn-lLw"/>
-                                            <constraint firstItem="wc5-6O-cvE" firstAttribute="trailing" secondItem="byH-6i-Q0F" secondAttribute="trailingMargin" id="wjK-xD-19J"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="RrX-4Q-ov8" secondAttribute="trailing" constant="20" symbolic="YES" id="IZ7-AD-c20"/>
+                                            <constraint firstItem="RrX-4Q-ov8" firstAttribute="top" secondItem="byH-6i-Q0F" secondAttribute="top" constant="11" id="NFN-fl-4Mz"/>
+                                            <constraint firstItem="RrX-4Q-ov8" firstAttribute="centerY" secondItem="byH-6i-Q0F" secondAttribute="centerY" id="lrQ-gM-LCB"/>
+                                            <constraint firstItem="wc5-6O-cvE" firstAttribute="trailing" secondItem="byH-6i-Q0F" secondAttribute="trailingMargin" id="nTE-5A-UB8"/>
+                                            <constraint firstItem="RrX-4Q-ov8" firstAttribute="centerY" secondItem="wc5-6O-cvE" secondAttribute="centerY" id="nfN-J6-kxP"/>
+                                            <constraint firstItem="RrX-4Q-ov8" firstAttribute="leading" secondItem="byH-6i-Q0F" secondAttribute="leadingMargin" id="pvY-Lv-U3z"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="uvv-WM-LdJ" firstAttribute="top" secondItem="IcN-Xg-hEH" secondAttribute="bottom" id="5dc-XX-6bJ"/>
-                                    <constraint firstItem="IcN-Xg-hEH" firstAttribute="centerY" secondItem="Skm-ZU-mLT" secondAttribute="centerY" id="VLn-PT-DMu"/>
-                                    <constraint firstItem="jXF-Mh-gxA" firstAttribute="top" secondItem="Skm-ZU-mLT" secondAttribute="top" constant="50" id="Vgb-R1-McO"/>
-                                    <constraint firstItem="byH-6i-Q0F" firstAttribute="top" secondItem="Skm-ZU-mLT" secondAttribute="top" constant="200" id="od1-d0-Ns4"/>
-                                    <constraint firstItem="uvv-WM-LdJ" firstAttribute="top" secondItem="Skm-ZU-mLT" secondAttribute="top" constant="150" id="v7L-LQ-MJN"/>
+                                    <constraint firstItem="IcN-Xg-hEH" firstAttribute="centerY" secondItem="Skm-ZU-mLT" secondAttribute="centerY" id="GrN-5x-RNU"/>
+                                    <constraint firstItem="IcN-Xg-hEH" firstAttribute="top" secondItem="jXF-Mh-gxA" secondAttribute="bottom" id="Myj-LW-209"/>
+                                    <constraint firstItem="jXF-Mh-gxA" firstAttribute="top" secondItem="Skm-ZU-mLT" secondAttribute="top" constant="50" id="fFc-s5-2KJ"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="o6N-T7-Nb1" firstAttribute="leading" secondItem="DeP-3N-xhn" secondAttribute="leading" id="22Y-ME-8yu"/>
-                            <constraint firstItem="DeP-3N-xhn" firstAttribute="centerX" secondItem="ndi-iw-RfC" secondAttribute="centerX" id="5Xa-ON-OD5"/>
-                            <constraint firstItem="Skm-ZU-mLT" firstAttribute="top" secondItem="bgI-vc-YeC" secondAttribute="top" constant="190" id="8d3-C2-FHp"/>
-                            <constraint firstItem="ndi-iw-RfC" firstAttribute="leading" secondItem="uTm-CH-YE1" secondAttribute="leadingMargin" id="ATE-PL-ewR"/>
-                            <constraint firstItem="o6N-T7-Nb1" firstAttribute="top" secondItem="Skm-ZU-mLT" secondAttribute="bottom" constant="8" id="Aff-q1-O4E"/>
-                            <constraint firstItem="o6N-T7-Nb1" firstAttribute="trailing" secondItem="DeP-3N-xhn" secondAttribute="trailing" id="DRm-Yy-LdL"/>
-                            <constraint firstItem="o6N-T7-Nb1" firstAttribute="leading" secondItem="bgI-vc-YeC" secondAttribute="leading" constant="10" id="ILH-EI-AgK"/>
-                            <constraint firstItem="ndi-iw-RfC" firstAttribute="trailing" secondItem="uTm-CH-YE1" secondAttribute="trailingMargin" id="NPh-5c-D2B"/>
-                            <constraint firstItem="Skm-ZU-mLT" firstAttribute="leading" secondItem="bgI-vc-YeC" secondAttribute="leading" id="Usm-I3-bnR"/>
-                            <constraint firstItem="bgI-vc-YeC" firstAttribute="bottom" secondItem="ndi-iw-RfC" secondAttribute="bottom" constant="10" id="fNi-9c-nnd"/>
-                            <constraint firstItem="DeP-3N-xhn" firstAttribute="top" secondItem="o6N-T7-Nb1" secondAttribute="bottom" constant="10" id="mJX-uX-ie3"/>
-                            <constraint firstItem="o6N-T7-Nb1" firstAttribute="top" secondItem="uTm-CH-YE1" secondAttribute="top" constant="492" id="pQ1-EN-rr4"/>
-                            <constraint firstItem="ndi-iw-RfC" firstAttribute="top" secondItem="DeP-3N-xhn" secondAttribute="bottom" id="rc0-Og-gSi"/>
-                            <constraint firstItem="Skm-ZU-mLT" firstAttribute="centerX" secondItem="o6N-T7-Nb1" secondAttribute="centerX" id="yFe-xf-T1C"/>
+                            <constraint firstItem="o6N-T7-Nb1" firstAttribute="top" secondItem="Skm-ZU-mLT" secondAttribute="bottom" constant="8" id="4Fy-JK-Zez"/>
+                            <constraint firstItem="o6N-T7-Nb1" firstAttribute="top" secondItem="uTm-CH-YE1" secondAttribute="top" constant="492" id="5IS-6X-d74"/>
+                            <constraint firstItem="DeP-3N-xhn" firstAttribute="top" secondItem="o6N-T7-Nb1" secondAttribute="bottom" constant="10" id="5Zo-bx-mqf"/>
+                            <constraint firstItem="o6N-T7-Nb1" firstAttribute="leading" secondItem="DeP-3N-xhn" secondAttribute="leading" id="Au7-KJ-rH4"/>
+                            <constraint firstItem="bgI-vc-YeC" firstAttribute="bottom" secondItem="ndi-iw-RfC" secondAttribute="bottom" constant="10" id="L9i-R1-1D7"/>
+                            <constraint firstItem="o6N-T7-Nb1" firstAttribute="leading" secondItem="bgI-vc-YeC" secondAttribute="leading" constant="10" id="OuW-GO-Qg8"/>
+                            <constraint firstItem="Skm-ZU-mLT" firstAttribute="leading" secondItem="bgI-vc-YeC" secondAttribute="leading" id="Vx9-sw-Tno"/>
+                            <constraint firstItem="o6N-T7-Nb1" firstAttribute="trailing" secondItem="DeP-3N-xhn" secondAttribute="trailing" id="Y6S-CH-COS"/>
+                            <constraint firstItem="DeP-3N-xhn" firstAttribute="centerX" secondItem="ndi-iw-RfC" secondAttribute="centerX" id="buj-Hs-WIu"/>
+                            <constraint firstItem="Skm-ZU-mLT" firstAttribute="top" secondItem="bgI-vc-YeC" secondAttribute="top" constant="190" id="e92-IP-jaJ"/>
+                            <constraint firstItem="Skm-ZU-mLT" firstAttribute="centerX" secondItem="o6N-T7-Nb1" secondAttribute="centerX" id="igv-My-njz"/>
+                            <constraint firstItem="ndi-iw-RfC" firstAttribute="trailing" secondItem="uTm-CH-YE1" secondAttribute="trailingMargin" id="lAf-k9-ApV"/>
+                            <constraint firstItem="ndi-iw-RfC" firstAttribute="top" secondItem="DeP-3N-xhn" secondAttribute="bottom" id="tlB-Oc-EAx"/>
+                            <constraint firstItem="ndi-iw-RfC" firstAttribute="leading" secondItem="uTm-CH-YE1" secondAttribute="leadingMargin" id="yZe-Vg-6M5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bgI-vc-YeC"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Daily" image="Today" id="SJm-8g-BA0"/>
                     <connections>
                         <outlet property="activeCalorieLabel" destination="D1v-EY-IBy" id="CZ2-iH-rgc"/>
+                        <outlet property="activityProgressBar" destination="dC2-kL-2Wq" id="2In-P0-iQV"/>
                         <outlet property="basalEnergyLabel" destination="2zj-nZ-dYL" id="fIO-pb-cTE"/>
                         <outlet property="datePicker" destination="DeP-3N-xhn" id="UJV-2n-Umf"/>
                         <outlet property="dietaryCalorieLabel" destination="apW-4I-JSq" id="k7e-TX-h4B"/>
+                        <outlet property="dietaryProgressBar" destination="MdZ-7d-tes" id="tLv-W7-NKL"/>
+                        <outlet property="meditationProgressBar" destination="wc5-6O-cvE" id="0Kz-g5-iKc"/>
                         <outlet property="netCaloriesLabel" destination="Uoa-c5-Zxc" id="BSG-ce-WzI"/>
+                        <outlet property="netProgressBar" destination="HhH-Sm-KcB" id="vPp-PZ-wv3"/>
+                        <outlet property="sleepProgressBar" destination="DGO-GY-4UM" id="h8P-im-0Or"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4R7-YP-ZV5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
