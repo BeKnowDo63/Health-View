@@ -44,7 +44,8 @@ class ViewController: UIViewController {
         healthKit.readDietaryEnergy(date: datePicker.date)
         healthKit.readActiveEnergy(date: datePicker.date)
         healthKit.readBasalEnergy(date: datePicker.date)
-       healthKit.readMindfulMinutes(date: datePicker.date)
+        healthKit.readMindfulMinutes(date: datePicker.date)
+        healthKit.readSleepAnalysis(date: datePicker.date)
 
         let userDietEnergy = String(format: "%0.0f", healthKit.userDietaryEnergy)
         dietaryCalorieLabel.text = String("\(userDietEnergy)")
@@ -155,35 +156,35 @@ class ViewController: UIViewController {
         updateLabels()
         
         meditationProgressBar.progress = 0.0
-        meditationProgressBar.transform = meditationProgressBar.transform.scaledBy(x:1, y: 8)
+        meditationProgressBar.transform = meditationProgressBar.transform.scaledBy(x:1, y: 5)
         meditationProgressBar.layer.cornerRadius = 10
         meditationProgressBar.clipsToBounds = true
         meditationProgressBar.layer.sublayers![1].cornerRadius = 10
         meditationProgressBar.subviews[1].clipsToBounds = true
 
         sleepProgressBar.progress = 0.0
-        sleepProgressBar.transform = sleepProgressBar.transform.scaledBy(x:1, y: 8)
+        sleepProgressBar.transform = sleepProgressBar.transform.scaledBy(x:1, y: 5)
         sleepProgressBar.layer.cornerRadius = 10
         sleepProgressBar.clipsToBounds = true
         sleepProgressBar.layer.sublayers![1].cornerRadius = 10
         sleepProgressBar.subviews[1].clipsToBounds = true
 
         activityProgressBar.progress = 0.0
-        activityProgressBar.transform = activityProgressBar.transform.scaledBy(x:1, y: 8)
+        activityProgressBar.transform = activityProgressBar.transform.scaledBy(x:1, y: 5)
         activityProgressBar.layer.cornerRadius = 10
         activityProgressBar.clipsToBounds = true
         activityProgressBar.layer.sublayers![1].cornerRadius = 10
         activityProgressBar.subviews[1].clipsToBounds = true
 
         dietaryProgressBar.progress = 0.0
-        dietaryProgressBar.transform = dietaryProgressBar.transform.scaledBy(x:1, y: 8)
+        dietaryProgressBar.transform = dietaryProgressBar.transform.scaledBy(x:1, y: 5)
         dietaryProgressBar.layer.cornerRadius = 10
         dietaryProgressBar.clipsToBounds = true
         dietaryProgressBar.layer.sublayers![1].cornerRadius = 10
         dietaryProgressBar.subviews[1].clipsToBounds = true
 
         netProgressBar.progress = 0.0
-        netProgressBar.transform = netProgressBar.transform.scaledBy(x:1, y: 8)
+        netProgressBar.transform = netProgressBar.transform.scaledBy(x:1, y: 5)
         netProgressBar.layer.cornerRadius = 10
         netProgressBar.clipsToBounds = true
         netProgressBar.layer.sublayers![1].cornerRadius = 10

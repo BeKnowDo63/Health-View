@@ -351,5 +351,41 @@ class HealthKit {
         HKHealthStore().execute(mindfulMinutesQuery)
     }
 
+    func readSleepAnalysis(date: Date) {
+     
+            // first, we define the object type we want
+        if let mindfulType = HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier.sleepAnalysis) {
+     
+            let startDate = convertStartDate(StartDate: date)
+            let endDate = convertEndDate(EndDate: date)
+            let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictStartDate)
+            // Use a sortDescriptor to get the recent data first
+            let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)
+     
+            // we create our query with a block completion to execute
+            let query = HKSampleQuery(sampleType: mindfulType, predicate: predicate, limit: 30, sortDescriptors: [sortDescriptor]) { (query, tmpResult, error) -> Void in
+     
+                if error != nil {
+                        print("Something went wrong getting sleep analysis: \(String(describing: error))")
+                    return
+                }
+                if let result = tmpResult {
+     
+                    // do something with my data
+                    for item in result {
+                        if let sample = item as? HKCategorySample {
+                            let value = (sample.value == HKCategoryValueSleepAnalysis.inBed.rawValue) ? "InBed" : "Asleep"
+                                print("Healthkit sleep: \(sample.startDate) \(sample.endDate) value: \(value)")
+                        }
+                    }
+                }
+            }
+            // finally, we execute our query
+            healthKit.execute(query)
+        }
+    }
+     
+
+//MARK: - End of code  
 
 }
