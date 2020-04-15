@@ -72,17 +72,21 @@ class ViewController: UIViewController {
     
     @objc func updateMeditationProgressBar() {
         
-        if healthKit.userActiveEnergy / activityGoal < 0.5 {
-            meditationProgressBar.progress = Float(healthKit.userMindfulMinutes) / Float(meditationGoal)
+        if healthKit.userMindfulMinutes / meditationGoal == 0.0 {
+            meditationProgressBar.progress = 1.0
             meditationProgressBar.progressTintColor = .red
             meditationProgressBar.setProgress(meditationProgressBar.progress, animated: true)
-        } else if healthKit.userActiveEnergy / activityGoal < 0.9 {
-            meditationProgressBar.progress = Float(healthKit.userMindfulMinutes) / Float(meditationGoal)
+        } else if healthKit.userMindfulMinutes / meditationGoal < 0.5 {
+            meditationProgressBar.progress = Float(healthKit.userMindfulMinutes / meditationGoal)
+            meditationProgressBar.progressTintColor = .red
+            meditationProgressBar.setProgress(meditationProgressBar.progress, animated: true)
+        } else if healthKit.userMindfulMinutes / meditationGoal < 0.9 {
+            meditationProgressBar.progress = Float(healthKit.userMindfulMinutes / meditationGoal)
             meditationProgressBar.progressTintColor = .yellow
             meditationProgressBar.setProgress(meditationProgressBar.progress, animated: true)
-        } else if healthKit.userActiveEnergy / activityGoal >= 0.9 {
-            meditationProgressBar.progress = Float(healthKit.userMindfulMinutes) / Float(meditationGoal)
-            meditationProgressBar.progressTintColor = .yellow
+        } else if healthKit.userMindfulMinutes / meditationGoal >= 0.9 {
+            meditationProgressBar.progress = Float(healthKit.userMindfulMinutes / meditationGoal)
+            meditationProgressBar.progressTintColor = .green
             meditationProgressBar.setProgress(meditationProgressBar.progress, animated: true)
         }
         
@@ -90,9 +94,23 @@ class ViewController: UIViewController {
     
     @objc func updateSleepProgressBar() {
         
-        sleepProgressBar.progress = 0.9
-        sleepProgressBar.setProgress(sleepProgressBar.progress, animated: true)
-        
+        if healthKit.userSleepHours / sleepGoal == 0.0 {
+            sleepProgressBar.progress = 1.0
+            sleepProgressBar.progressTintColor = .red
+            sleepProgressBar.setProgress(sleepProgressBar.progress, animated: true)
+        } else if healthKit.userSleepHours / sleepGoal < 0.5 {
+            sleepProgressBar.progress = Float(healthKit.userSleepHours / sleepGoal)
+            sleepProgressBar.progressTintColor = .red
+            sleepProgressBar.setProgress(sleepProgressBar.progress, animated: true)
+        } else if healthKit.userSleepHours / sleepGoal < 0.9 {
+            sleepProgressBar.progress = Float(healthKit.userSleepHours / sleepGoal)
+            sleepProgressBar.progressTintColor = .yellow
+            sleepProgressBar.setProgress(sleepProgressBar.progress, animated: true)
+        } else if healthKit.userSleepHours / sleepGoal >= 0.9 {
+            sleepProgressBar.progress = Float(healthKit.userSleepHours / sleepGoal)
+            sleepProgressBar.progressTintColor = .green
+            sleepProgressBar.setProgress(sleepProgressBar.progress, animated: true)
+        }
     }
     
     @objc func updateActivityProgressBar() {
@@ -115,17 +133,17 @@ class ViewController: UIViewController {
     
     @objc func updateDietaryProgressBar() {
         
-        if Float(healthKit.userDietaryEnergy) / Float(dietaryGoal) < 0.50 {
+        if Float(healthKit.userDietaryEnergy) / Float(dietaryGoal) <= 1.0 {
             dietaryProgressBar.progress = Float(healthKit.userDietaryEnergy) / Float(dietaryGoal)
-            dietaryProgressBar.progressTintColor = .red
+            dietaryProgressBar.progressTintColor = .green
             dietaryProgressBar.setProgress(dietaryProgressBar.progress, animated: true)
-        } else if Float(healthKit.userDietaryEnergy) / Float(dietaryGoal) < 0.90 {
+        } else if Float(healthKit.userDietaryEnergy) / Float(dietaryGoal) < 1.10 {
             dietaryProgressBar.progress = Float(healthKit.userDietaryEnergy) / Float(dietaryGoal)
             dietaryProgressBar.progressTintColor = .yellow
             dietaryProgressBar.setProgress(dietaryProgressBar.progress, animated: true)
-        } else if Float(healthKit.userDietaryEnergy) / Float(dietaryGoal) >= 0.90 {
+        } else if Float(healthKit.userDietaryEnergy) / Float(dietaryGoal) >= 1.10 {
             dietaryProgressBar.progress = Float(healthKit.userDietaryEnergy) / Float(dietaryGoal)
-            dietaryProgressBar.progressTintColor = .green
+            dietaryProgressBar.progressTintColor = .red
             dietaryProgressBar.setProgress(dietaryProgressBar.progress, animated: true)
         }
         

@@ -13,6 +13,7 @@ class HealthKit {
     var userBasalEnergy : Double = 0.0
     var userStepCount : Double = 0.0
     var userMindfulMinutes : Double = 0.0
+    var userSleepHours : Double = 0.0
 
     
     //MARK: - Steps to access the Apple Health App Data.
@@ -219,6 +220,29 @@ class HealthKit {
         return date!
     }
 
+    //MARK: - Convert sleep query start and end dates
+    func convertSleepStartDate(StartDate: Date) -> Date {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyy-MM-dd '18':'00':'01' +0000"
+        let dateString = dateFormatter.string(from: StartDate)
+        dateFormatter.dateFormat = "yyy-MM-dd HH:mm:ss +0000"
+        let date = dateFormatter.date(from: dateString)
+        let datePrior = Calendar.current.date(byAdding: .hour, value: -24, to: date!)
+
+        return datePrior!
+    }
+    
+    func convertSleepEndDate(EndDate: Date) -> Date {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyy-MM-dd '17':'59':'59' +0000"
+        let dateString = dateFormatter.string(from: EndDate)
+        dateFormatter.dateFormat = "yyy-MM-dd HH:mm:ss +0000"
+        let date = dateFormatter.date(from: dateString)
+
+        return date!
+    }
     //MARK: - Read Dietary Energy
     func readDietaryEnergy(date: Date) {
         guard let energyType = HKSampleType.quantityType(forIdentifier: .dietaryEnergyConsumed) else {
@@ -337,7 +361,7 @@ class HealthKit {
                                         guard
                                             error == nil,
                                         samples == samples as? [HKCategorySample] else {
-                                                print("Something went wrong: \(String(describing: error))")
+                                                print("Something went wrong getting mindful minutes: \(String(describing: error))")
                                                 return
                                         }
                                         
@@ -361,33 +385,42 @@ class HealthKit {
     //MARK: - Read Sleep Analysis
     func readSleepAnalysis(date: Date) {
      
-        if let mindfulType = HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier.sleepAnalysis) {
+        if let sleepType = HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier.sleepAnalysis) {
      
-            let startDate = convertStartDate(StartDate: date)
-            let endDate = convertEndDate(EndDate: date)
+            let startDate = convertSleepStartDate(StartDate: date)
+            let endDate = convertSleepEndDate(EndDate: date)
             let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictStartDate)
 
             let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)
      
-            let query = HKSampleQuery(sampleType: mindfulType, predicate: predicate, limit: 30, sortDescriptors: [sortDescriptor]) { (query, tmpResult, error) -> Void in
-     
-                if error != nil {
-                        print("Something went wrong getting sleep analysis: \(String(describing: error))")
-                    return
-                }
-                if let result = tmpResult {
-     
-                    for item in result {
-                        if let sample = item as? HKCategorySample {
-                            let value = (sample.value == HKCategoryValueSleepAnalysis.inBed.rawValue) ? "InBed" : "Asleep"
-                                print("Healthkit sleep: \(sample.startDate) \(sample.endDate) value: \(value)")
-                        }
-                    }
-                }
+            let query = HKSampleQuery(sampleType: sleepType, predicate: predicate, limit: 30, sortDescriptors: [sortDescriptor]) {
+                                                        (query, samples, error) in
+                                                
+                                            guard
+                                                error == nil,
+                                            samples == samples as? [HKCategorySample] else {
+                                                    print("Something went wrong getting sleep analysis: \(String(describing: error))")
+                                                    return
+                                            }
+                                            
+                                            let total = samples?.map(self.calculateSleepHours).reduce(0, {$0 + $1}) ?? 0
+                                            DispatchQueue.main.async {
+                                                self.userSleepHours = total
+                                                print("userSleepHours = \(self.userSleepHours)")
+                                            }
+            
             }
             healthKit.execute(query)
         }
     }
+    
+    func calculateSleepHours(sample: HKSample) -> TimeInterval {
+        
+        let hours = sample.endDate.timeIntervalSince(sample.startDate) / 60 / 60
+
+        return hours
+    }
+
      
 
 //MARK: - End of code  
