@@ -72,8 +72,19 @@ class ViewController: UIViewController {
     
     @objc func updateMeditationProgressBar() {
         
-        meditationProgressBar.progress = 0.8
-        meditationProgressBar.setProgress(meditationProgressBar.progress, animated: true)
+        if healthKit.userActiveEnergy / activityGoal < 0.5 {
+            meditationProgressBar.progress = Float(healthKit.userMindfulMinutes) / Float(meditationGoal)
+            meditationProgressBar.progressTintColor = .red
+            meditationProgressBar.setProgress(meditationProgressBar.progress, animated: true)
+        } else if healthKit.userActiveEnergy / activityGoal < 0.9 {
+            meditationProgressBar.progress = Float(healthKit.userMindfulMinutes) / Float(meditationGoal)
+            meditationProgressBar.progressTintColor = .yellow
+            meditationProgressBar.setProgress(meditationProgressBar.progress, animated: true)
+        } else if healthKit.userActiveEnergy / activityGoal >= 0.9 {
+            meditationProgressBar.progress = Float(healthKit.userMindfulMinutes) / Float(meditationGoal)
+            meditationProgressBar.progressTintColor = .yellow
+            meditationProgressBar.setProgress(meditationProgressBar.progress, animated: true)
+        }
         
     }
     

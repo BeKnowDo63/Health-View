@@ -336,12 +336,12 @@ class HealthKit {
                                             
                                         guard
                                             error == nil,
-                                        let quantitySamples = samples as? [HKQuantitySample] else {
+                                        samples == samples as? [HKCategorySample] else {
                                                 print("Something went wrong: \(String(describing: error))")
                                                 return
                                         }
                                         
-                                            let total = quantitySamples.reduce(0.0) { $0 + $1.quantity.doubleValue(for: HKUnit.minute()) }
+                                        let total = samples?.map(self.calculateMindfulMinutes).reduce(0, {$0 + $1}) ?? 0
                                         DispatchQueue.main.async {
                                             self.userMindfulMinutes = total
                                             print("userMindfulMinutes = \(self.userMindfulMinutes)")
@@ -350,19 +350,25 @@ class HealthKit {
         }
         HKHealthStore().execute(mindfulMinutesQuery)
     }
+    
+    func calculateMindfulMinutes(sample: HKSample) -> TimeInterval {
+        
+        let minutes = sample.endDate.timeIntervalSince(sample.startDate) / 60
 
+        return minutes
+    }
+
+    //MARK: - Read Sleep Analysis
     func readSleepAnalysis(date: Date) {
      
-            // first, we define the object type we want
         if let mindfulType = HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier.sleepAnalysis) {
      
             let startDate = convertStartDate(StartDate: date)
             let endDate = convertEndDate(EndDate: date)
             let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictStartDate)
-            // Use a sortDescriptor to get the recent data first
+
             let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)
      
-            // we create our query with a block completion to execute
             let query = HKSampleQuery(sampleType: mindfulType, predicate: predicate, limit: 30, sortDescriptors: [sortDescriptor]) { (query, tmpResult, error) -> Void in
      
                 if error != nil {
@@ -371,7 +377,6 @@ class HealthKit {
                 }
                 if let result = tmpResult {
      
-                    // do something with my data
                     for item in result {
                         if let sample = item as? HKCategorySample {
                             let value = (sample.value == HKCategoryValueSleepAnalysis.inBed.rawValue) ? "InBed" : "Asleep"
@@ -380,7 +385,6 @@ class HealthKit {
                     }
                 }
             }
-            // finally, we execute our query
             healthKit.execute(query)
         }
     }
