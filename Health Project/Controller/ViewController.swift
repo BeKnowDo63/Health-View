@@ -22,6 +22,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var basalEnergyLabel: UILabel!
     @IBOutlet weak var netCaloriesLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var netGoalLabel: UILabel!
+    @IBOutlet weak var dailyGoalLabel: UILabel!
+    @IBOutlet weak var activityGoalLabel: UILabel!
+    @IBOutlet weak var sleepGoalLabel: UILabel!
+    @IBOutlet weak var meditationGoalLabel: UILabel!
+    
     
     @IBAction func datePickerChanged(_ sender: Any) {
 
@@ -62,6 +68,21 @@ class ViewController: UIViewController {
         }
         netCaloriesLabel.text = String("\(userNetString)")
         
+        let calculatedNetGoal = abs(Int(Float(healthKit.userDietaryEnergy - healthKit.userBasalEnergy - healthKit.userActiveEnergy) / Float(netCalorieGoal)) * 100)
+        netGoalLabel.text = String("Goal: \(Int(netCalorieGoal)) | Percent: \(calculatedNetGoal)")
+        
+        let calculatedDailyGoal = Int(Float(healthKit.userDietaryEnergy) / Float(dietaryGoal) * 100)
+        dailyGoalLabel.text = String("Goal: \(Int(dietaryGoal)) | Percent: \(calculatedDailyGoal)")
+        
+        let calculatedActivityGoal = Int((healthKit.userActiveEnergy / activityGoal) * 100)
+        activityGoalLabel.text = String("Goal: \(Int(activityGoal)) | Percent: \(calculatedActivityGoal)")
+        
+        let calculatedSleepGoal = Int((healthKit.userSleepHours / sleepGoal) * 100)
+        sleepGoalLabel.text = String("Goal: \(Int(sleepGoal)) | Percent: \(calculatedSleepGoal)")
+        
+        let calculatedMeditationGoal = Int((healthKit.userMindfulMinutes / meditationGoal) * 100)
+        meditationGoalLabel.text = String("Goal: \(Int(meditationGoal)) | Percent: \(calculatedMeditationGoal)")
+        
         updateMeditationProgressBar()
         updateSleepProgressBar()
         updateActivityProgressBar()
@@ -70,6 +91,7 @@ class ViewController: UIViewController {
 
     }
     
+    //MARK: - Update Meditation Progress Bar
     @objc func updateMeditationProgressBar() {
         
         if healthKit.userMindfulMinutes / meditationGoal == 0.0 {
@@ -92,6 +114,7 @@ class ViewController: UIViewController {
         
     }
     
+    //MARK: - Update Sleep Progress Bar
     @objc func updateSleepProgressBar() {
         
         if healthKit.userSleepHours / sleepGoal == 0.0 {
@@ -113,6 +136,7 @@ class ViewController: UIViewController {
         }
     }
     
+    //MARK: - Update Activity Progress Bar
     @objc func updateActivityProgressBar() {
         
         if healthKit.userActiveEnergy / activityGoal < 0.5 {
@@ -131,6 +155,7 @@ class ViewController: UIViewController {
         
     }
     
+    //MARK: - Update Dietary Progress Bar
     @objc func updateDietaryProgressBar() {
         
         if Float(healthKit.userDietaryEnergy) / Float(dietaryGoal) <= 1.0 {
@@ -149,6 +174,7 @@ class ViewController: UIViewController {
         
     }
     
+    //MARK: - Update Net Calorie Progress Bar
     @objc func updateNetProgressBar() {
         
         if  Float(healthKit.userDietaryEnergy - healthKit.userBasalEnergy - healthKit.userActiveEnergy) / Float(netCalorieGoal) > 0.0 && Float(healthKit.userDietaryEnergy - healthKit.userBasalEnergy - healthKit.userActiveEnergy) / Float(netCalorieGoal) < 0.50 {
@@ -169,10 +195,6 @@ class ViewController: UIViewController {
             netProgressBar.setProgress(netProgressBar.progress, animated: true)
         }
 
-    }
-    
-    //MARK: - Timer Action
-    @objc func timerAction(_ timer: Timer) {
     }
     
     //MARK: - View Did Load
