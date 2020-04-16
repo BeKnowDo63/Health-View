@@ -62,6 +62,7 @@ class HealthKit {
                                                         HKSampleType.quantityType(forIdentifier: .dietarySodium)!,
                                                         HKSampleType.quantityType(forIdentifier: .bodyFatPercentage)!,
                                                         HKSampleType.categoryType(forIdentifier: .mindfulSession)!,
+                                                        HKSampleType.categoryType(forIdentifier: .sleepAnalysis)!,
                                                         HKSampleType.characteristicType(forIdentifier: .dateOfBirth)!]
             
             //Check authorization from Healthkit and if it exists, let the user know.  If the check fails, let the user know.

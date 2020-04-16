@@ -185,35 +185,35 @@ class ViewController: UIViewController {
         updateLabels()
         
         meditationProgressBar.progress = 0.0
-        meditationProgressBar.transform = meditationProgressBar.transform.scaledBy(x:1, y: 5)
+        meditationProgressBar.transform = meditationProgressBar.transform.scaledBy(x:1, y: 4)
         meditationProgressBar.layer.cornerRadius = 10
         meditationProgressBar.clipsToBounds = true
         meditationProgressBar.layer.sublayers![1].cornerRadius = 10
         meditationProgressBar.subviews[1].clipsToBounds = true
 
         sleepProgressBar.progress = 0.0
-        sleepProgressBar.transform = sleepProgressBar.transform.scaledBy(x:1, y: 5)
+        sleepProgressBar.transform = sleepProgressBar.transform.scaledBy(x:1, y: 4)
         sleepProgressBar.layer.cornerRadius = 10
         sleepProgressBar.clipsToBounds = true
         sleepProgressBar.layer.sublayers![1].cornerRadius = 10
         sleepProgressBar.subviews[1].clipsToBounds = true
 
         activityProgressBar.progress = 0.0
-        activityProgressBar.transform = activityProgressBar.transform.scaledBy(x:1, y: 5)
+        activityProgressBar.transform = activityProgressBar.transform.scaledBy(x:1, y: 4)
         activityProgressBar.layer.cornerRadius = 10
         activityProgressBar.clipsToBounds = true
         activityProgressBar.layer.sublayers![1].cornerRadius = 10
         activityProgressBar.subviews[1].clipsToBounds = true
 
         dietaryProgressBar.progress = 0.0
-        dietaryProgressBar.transform = dietaryProgressBar.transform.scaledBy(x:1, y: 5)
+        dietaryProgressBar.transform = dietaryProgressBar.transform.scaledBy(x:1, y: 4)
         dietaryProgressBar.layer.cornerRadius = 10
         dietaryProgressBar.clipsToBounds = true
         dietaryProgressBar.layer.sublayers![1].cornerRadius = 10
         dietaryProgressBar.subviews[1].clipsToBounds = true
 
         netProgressBar.progress = 0.0
-        netProgressBar.transform = netProgressBar.transform.scaledBy(x:1, y: 5)
+        netProgressBar.transform = netProgressBar.transform.scaledBy(x:1, y: 4)
         netProgressBar.layer.cornerRadius = 10
         netProgressBar.clipsToBounds = true
         netProgressBar.layer.sublayers![1].cornerRadius = 10
