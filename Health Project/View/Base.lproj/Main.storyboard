@@ -23,7 +23,7 @@
             </objects>
             <point key="canvasLocation" x="-736" y="154"/>
         </scene>
-        <!--Daily-->
+        <!--Overview-->
         <scene sceneID="WRS-lf-S3Z">
             <objects>
                 <viewController storyboardIdentifier="vc2" id="ZwD-eS-wQx" customClass="ViewController" customModule="Health_Project" customModuleProvider="target" sceneMemberID="viewController">
@@ -344,7 +344,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bgI-vc-YeC"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Daily" image="Today" id="SJm-8g-BA0"/>
+                    <tabBarItem key="tabBarItem" title="Overview" image="Today" id="SJm-8g-BA0"/>
                     <connections>
                         <outlet property="activeCalorieLabel" destination="D1v-EY-IBy" id="CZ2-iH-rgc"/>
                         <outlet property="activityGoalLabel" destination="Djz-fr-i1L" id="AsX-oQ-g38"/>
