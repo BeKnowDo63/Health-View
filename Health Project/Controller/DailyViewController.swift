@@ -31,7 +31,8 @@ class ViewController: UIViewController {
     
     @IBAction func datePickerChanged(_ sender: Any) {
 
-        updateLabels()
+        clearLabels()
+        
     }
     
     @IBAction func updateLabelButton(_ sender: Any) {
@@ -44,6 +45,25 @@ class ViewController: UIViewController {
     @IBOutlet weak var netProgressBar: UIProgressView!
     @IBOutlet weak var dietaryProgressBar: UIProgressView!
     
+    //MARK: - Clear Labels
+    func clearLabels() {
+        dietaryProgressBar.progress = 0.0
+        sleepProgressBar.progress = 0.0
+        activityProgressBar.progress = 0.0
+        netProgressBar.progress = 0.0
+        meditationProgressBar.progress = 0.0
+        
+        dietaryCalorieLabel.text = ""
+        activeCalorieLabel.text = ""
+        basalEnergyLabel.text = ""
+        netCaloriesLabel.text = ""
+        netGoalLabel.text = ""
+        dailyGoalLabel.text = ""
+        activityGoalLabel.text = ""
+        sleepGoalLabel.text = ""
+        meditationGoalLabel.text = ""
+    }
+
     //MARK: - Update Labels
     func updateLabels() {
         
