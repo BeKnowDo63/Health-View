@@ -7,35 +7,59 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Nutrition-->
+        <!--Workout-->
         <scene sceneID="qwN-IY-A76">
             <objects>
-                <viewController storyboardIdentifier="vc3" id="KLJ-Wp-uTa" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vc3" title="Workout" id="KLJ-Wp-uTa" customClass="WorkoutViewController" customModule="FitTrax" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qgB-g4-Ks8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PuY-Je-bo8">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="KLJ-Wp-uTa" id="wAQ-Iv-9OD"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="qh6-kJ-Pcx"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Nutrition" image="cart" catalog="system" id="0Fi-G6-IdM"/>
+                    <tabBarItem key="tabBarItem" title="Workout" image="Workout" id="0Fi-G6-IdM"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PyB-WZ-pMl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-736" y="154"/>
+            <point key="canvasLocation" x="-1552" y="151"/>
         </scene>
         <!--Overview-->
         <scene sceneID="WRS-lf-S3Z">
             <objects>
-                <viewController storyboardIdentifier="vc2" id="ZwD-eS-wQx" customClass="ViewController" customModule="Health_Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vc2" id="ZwD-eS-wQx" customClass="ViewController" customModule="FitTrax" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uTm-CH-YE1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ndi-iw-RfC" userLabel="Button View">
                                 <rect key="frame" x="20" y="753" width="374" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Kd-8q-xc2" userLabel="UpdateButton">
+                                        <rect key="frame" x="137" y="0.0" width="160" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="98" id="wV4-r8-YwO"/>
+                                        </constraints>
+                                        <state key="normal" title="Update" image="blueButton"/>
+                                        <connections>
+                                            <action selector="updateLabelButton:" destination="ZwD-eS-wQx" eventType="touchUpInside" id="9ZO-Nh-CFy"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="3kf-aj-mtx"/>
+                                    <constraint firstItem="7Kd-8q-xc2" firstAttribute="centerX" secondItem="ndi-iw-RfC" secondAttribute="centerX" constant="30" id="BgY-zo-2jr"/>
+                                    <constraint firstItem="7Kd-8q-xc2" firstAttribute="top" secondItem="ndi-iw-RfC" secondAttribute="top" id="KpZ-Ay-SaV"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Skm-ZU-mLT" userLabel="Progress Stack View">
@@ -115,10 +139,10 @@
                                         <rect key="frame" x="0.0" y="90" width="354" height="40"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="G85-tm-7H6">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="41"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="140.66666666666666" height="41"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAh-6r-a2i">
-                                                        <rect key="frame" x="0.0" y="0.0" width="79.666666666666671" height="24"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity Calories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAh-6r-a2i">
+                                                        <rect key="frame" x="0.0" y="0.0" width="140.66666666666666" height="24"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -150,10 +174,10 @@
                                         <rect key="frame" x="0.0" y="135" width="354" height="40"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="KoA-b9-RsA">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="41"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="106.33333333333333" height="41"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sleep" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="se7-XI-Quz">
-                                                        <rect key="frame" x="0.0" y="0.0" width="49.333333333333336" height="24"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sleep Hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="se7-XI-Quz">
+                                                        <rect key="frame" x="0.0" y="0.0" width="106.33333333333333" height="24"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -188,10 +212,10 @@
                                         <rect key="frame" x="0.0" y="180" width="354" height="40"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="cuH-Hl-syL">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="42"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="167" height="42"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meditation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RrX-4Q-ov8">
-                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="24"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meditation Minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RrX-4Q-ov8">
+                                                        <rect key="frame" x="0.0" y="0.0" width="167" height="24"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -306,16 +330,6 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Kd-8q-xc2" userLabel="UpdateButton">
-                                <rect key="frame" x="157.66666666666666" y="749" width="98.999999999999972" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="99" id="rjV-k7-PpR"/>
-                                </constraints>
-                                <state key="normal" title="Update" image="blueButton"/>
-                                <connections>
-                                    <action selector="updateLabelButton:" destination="ZwD-eS-wQx" eventType="touchUpInside" id="9ZO-Nh-CFy"/>
-                                </connections>
-                            </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="DeP-3N-xhn">
                                 <rect key="frame" x="47" y="559" width="320" height="190"/>
                                 <constraints>
@@ -328,14 +342,12 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="7Kd-8q-xc2" firstAttribute="top" secondItem="DeP-3N-xhn" secondAttribute="bottom" id="6Ha-RK-dnc"/>
                             <constraint firstItem="DeP-3N-xhn" firstAttribute="centerX" secondItem="uTm-CH-YE1" secondAttribute="centerX" id="6Pm-Fh-w9B"/>
                             <constraint firstItem="ndi-iw-RfC" firstAttribute="centerX" secondItem="o6N-T7-Nb1" secondAttribute="centerX" id="83c-lm-9zH"/>
                             <constraint firstItem="o6N-T7-Nb1" firstAttribute="top" secondItem="Skm-ZU-mLT" secondAttribute="bottom" constant="8" id="8TU-Ro-ktT"/>
                             <constraint firstItem="ndi-iw-RfC" firstAttribute="top" secondItem="DeP-3N-xhn" secondAttribute="bottom" constant="4" id="NvB-zv-iwE"/>
                             <constraint firstItem="ndi-iw-RfC" firstAttribute="centerX" secondItem="DeP-3N-xhn" secondAttribute="centerX" id="P1o-Wi-npc"/>
                             <constraint firstItem="Skm-ZU-mLT" firstAttribute="top" secondItem="bgI-vc-YeC" secondAttribute="top" constant="13" id="XQA-RZ-TaS"/>
-                            <constraint firstItem="7Kd-8q-xc2" firstAttribute="centerX" secondItem="uTm-CH-YE1" secondAttribute="centerX" id="ddc-Q7-ZaZ"/>
                             <constraint firstItem="Skm-ZU-mLT" firstAttribute="leading" secondItem="o6N-T7-Nb1" secondAttribute="leading" id="eEY-2Y-d1i"/>
                             <constraint firstItem="bgI-vc-YeC" firstAttribute="bottom" secondItem="ndi-iw-RfC" secondAttribute="bottom" constant="10" id="fEf-z5-hGF"/>
                             <constraint firstItem="ndi-iw-RfC" firstAttribute="leading" secondItem="uTm-CH-YE1" secondAttribute="leadingMargin" id="jOA-m8-FXN"/>
@@ -365,7 +377,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4R7-YP-ZV5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1591.2" y="151.57421289355324"/>
+            <point key="canvasLocation" x="-2275.36231884058" y="150.66964285714286"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Mq3-Ww-fdN">
@@ -379,34 +391,151 @@
                     <connections>
                         <segue destination="ZwD-eS-wQx" kind="relationship" relationship="viewControllers" id="F02-L5-sCT"/>
                         <segue destination="KLJ-Wp-uTa" kind="relationship" relationship="viewControllers" id="bdY-Wa-7vD"/>
+                        <segue destination="nMj-UW-kJD" kind="relationship" relationship="viewControllers" id="Q7g-xK-ak4"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="7BQ-y9-cSq"/>
+                        <segue destination="3xe-IQ-q1z" kind="relationship" relationship="viewControllers" id="CYF-Z0-dam"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l24-Se-ePf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-736" y="-672"/>
         </scene>
-        <!--Goals-->
+        <!--Sleep-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="vc4" id="BYZ-38-t0r" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vc4" title="Sleep" id="BYZ-38-t0r" customClass="SleepViewController" customModule="FitTrax" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HjG-tW-h7Q">
+                                <rect key="frame" x="143" y="635" width="129" height="125"/>
+                                <state key="normal" title="Button" image="start"/>
+                                <connections>
+                                    <action selector="startButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uIC-7O-Ky3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CrI-V8-9nS">
+                                <rect key="frame" x="143" y="635" width="129" height="125"/>
+                                <state key="normal" title="Button" image="pause"/>
+                                <connections>
+                                    <action selector="pauseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ThW-t4-CQ5"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QuX-Kl-QNo">
+                                <rect key="frame" x="86.666666666666686" y="529" width="241" height="50"/>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="QuX-Kl-QNo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5ke-h5-zqu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HjG-tW-h7Q" secondAttribute="trailing" constant="142" id="Wvp-1T-cMZ"/>
+                            <constraint firstItem="HjG-tW-h7Q" firstAttribute="top" secondItem="QuX-Kl-QNo" secondAttribute="bottom" constant="56" id="YWA-us-yVB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CrI-V8-9nS" secondAttribute="bottom" constant="53" id="aNZ-nW-PCE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CrI-V8-9nS" secondAttribute="trailing" constant="142" id="h7B-Hw-6Kc"/>
+                            <constraint firstItem="CrI-V8-9nS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="143" id="knI-Qd-xkN"/>
+                            <constraint firstItem="HjG-tW-h7Q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="143" id="s5n-Mr-n8e"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HjG-tW-h7Q" secondAttribute="bottom" constant="53" id="umV-Cc-Z7c"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Goals" image="star.fill" catalog="system" id="bJa-MB-6Gi"/>
+                    <tabBarItem key="tabBarItem" title="Sleep" image="bed.double" catalog="system" id="bJa-MB-6Gi"/>
+                    <connections>
+                        <outlet property="paused" destination="CrI-V8-9nS" id="HRj-qu-F41"/>
+                        <outlet property="start" destination="HjG-tW-h7Q" id="bxB-D3-2hu"/>
+                        <outlet property="timerLabel" destination="QuX-Kl-QNo" id="F8G-Jj-PzE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="103" y="153"/>
+            <point key="canvasLocation" x="37.681159420289859" y="150.66964285714286"/>
+        </scene>
+        <!--Meditation-->
+        <scene sceneID="D0y-KL-mgo">
+            <objects>
+                <viewController title="Meditation" id="3xe-IQ-q1z" customClass="MeditationViewController" customModule="FitTrax" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="51o-c2-BaW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bd3-TU-hOB">
+                                <rect key="frame" x="142" y="635" width="124" height="125"/>
+                                <state key="normal" title="Start" image="start">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="startButton:" destination="3xe-IQ-q1z" eventType="touchUpInside" id="ntI-Le-3UP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSE-th-H10">
+                                <rect key="frame" x="141" y="635" width="125" height="125"/>
+                                <state key="normal" title="Pause" image="pause">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="pausedButton:" destination="3xe-IQ-q1z" eventType="touchUpInside" id="7qA-Co-9rO"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EbW-Mw-Fqa">
+                                <rect key="frame" x="87.000000000000014" y="526" width="240.33333333333337" height="50"/>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="J0q-qB-Qqr" firstAttribute="bottom" secondItem="Bd3-TU-hOB" secondAttribute="bottom" constant="53" id="0rR-F4-taK"/>
+                            <constraint firstItem="Bd3-TU-hOB" firstAttribute="leading" secondItem="J0q-qB-Qqr" secondAttribute="leading" constant="142" id="2TO-B9-gAo"/>
+                            <constraint firstItem="J0q-qB-Qqr" firstAttribute="trailing" secondItem="Bd3-TU-hOB" secondAttribute="trailing" constant="148" id="5bD-P0-Lgw"/>
+                            <constraint firstItem="Bd3-TU-hOB" firstAttribute="top" secondItem="EbW-Mw-Fqa" secondAttribute="bottom" constant="59" id="IDX-7i-cfN"/>
+                            <constraint firstItem="J0q-qB-Qqr" firstAttribute="bottom" secondItem="MSE-th-H10" secondAttribute="bottom" constant="53" id="OuT-Da-eKA"/>
+                            <constraint firstItem="EbW-Mw-Fqa" firstAttribute="centerX" secondItem="51o-c2-BaW" secondAttribute="centerX" id="U1P-fo-52v"/>
+                            <constraint firstItem="MSE-th-H10" firstAttribute="leading" secondItem="J0q-qB-Qqr" secondAttribute="leading" constant="141" id="bYY-Qw-fv2"/>
+                            <constraint firstItem="J0q-qB-Qqr" firstAttribute="trailing" secondItem="MSE-th-H10" secondAttribute="trailing" constant="148" id="nDe-jC-DVm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="J0q-qB-Qqr"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Meditation" image="bell" catalog="system" id="vNg-ZP-Vuo"/>
+                    <navigationItem key="navigationItem" id="ljR-Qc-svB"/>
+                    <connections>
+                        <outlet property="paused" destination="MSE-th-H10" id="GTR-9R-Kqf"/>
+                        <outlet property="start" destination="Bd3-TU-hOB" id="6ik-pi-wqv"/>
+                        <outlet property="timerLabel" destination="EbW-Mw-Fqa" id="IbS-Zo-vXM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1kL-8D-VYx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="800.00000000000011" y="150.66964285714286"/>
+        </scene>
+        <!--Diet-->
+        <scene sceneID="18b-DQ-Pzl">
+            <objects>
+                <viewController id="nMj-UW-kJD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WLj-iL-poZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Y5I-OJ-0he"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Diet" image="cart" catalog="system" id="qa5-T7-A39"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hSl-HS-ev6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-736" y="151"/>
         </scene>
     </scenes>
     <resources>
         <image name="Today" width="35" height="35"/>
+        <image name="Workout" width="35" height="35"/>
+        <image name="bed.double" catalog="system" width="128" height="80"/>
+        <image name="bell" catalog="system" width="128" height="124"/>
         <image name="blueButton" width="100" height="45"/>
         <image name="cart" catalog="system" width="128" height="102"/>
-        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <image name="pause" width="125" height="125"/>
+        <image name="start" width="125" height="125"/>
     </resources>
 </document>

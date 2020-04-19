@@ -14,6 +14,7 @@ class HealthKit {
     var userStepCount : Double = 0.0
     var userMindfulMinutes : Double = 0.0
     var userSleepHours : Double = 0.0
+    var savedMeditation : Bool = true
 
     
     //MARK: - Steps to access the Apple Health App Data.
@@ -382,39 +383,63 @@ class HealthKit {
 
         return minutes
     }
-
-    //MARK: - Read Sleep Analysis
-    func readSleepAnalysis(date: Date) {
-     
-        if let sleepType = HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier.sleepAnalysis) {
-     
-            let startDate = convertSleepStartDate(StartDate: date)
-            let endDate = convertSleepEndDate(EndDate: date)
-            let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictStartDate)
-
-            let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)
-     
-            let query = HKSampleQuery(sampleType: sleepType, predicate: predicate, limit: 30, sortDescriptors: [sortDescriptor]) {
-                                                        (query, samples, error) in
-                                                
-                                            guard
-                                                error == nil,
-                                            samples == samples as? [HKCategorySample] else {
-                                                    print("Something went wrong getting sleep analysis: \(String(describing: error))")
-                                                    return
-                                            }
-                                            
-                                            let total = samples?.map(self.calculateSleepHours).reduce(0, {$0 + $1}) ?? 0
-                                            DispatchQueue.main.async {
-                                                self.userSleepHours = total
-                                                print("userSleepHours = \(self.userSleepHours)")
-                                            }
-            
-            }
-            healthKit.execute(query)
-        }
-    }
     
+    //MARK: - Save Mindful Minutes
+    func saveMindfulMinutes(from: Date, amount: TimeInterval) {
+        
+        if let mindfulType = HKObjectType.categoryType(forIdentifier: .mindfulSession) {
+            let mindfulSample = HKCategorySample(type: mindfulType, value: HKCategoryValue.notApplicable.rawValue, start: Date(), end: Date() + amount)
+            
+            healthKit.save(mindfulSample) { (success, error) -> Void in
+                if error != nil {
+                    print("Something happened while saving mindful minutes")
+                    self.savedMeditation = false
+                    return
+                }
+                if success {
+                    print("Meditation was saved to HealthKit")
+                    self.savedMeditation = true
+                } else {
+                    print("Something happened while saving mindful minutes")
+                    self.savedMeditation = false
+                }
+            }
+        }
+        
+    }
+
+        //MARK: - Read Sleep Analysis
+        func readSleepAnalysis(date: Date) {
+
+            if let sleepType = HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier.sleepAnalysis) {
+         
+                let startDate = convertSleepStartDate(StartDate: date)
+                let endDate = convertSleepEndDate(EndDate: date)
+                let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictStartDate)
+    //            let asleepPredicate = HKQuery.predicateForObjects(from: HKObjectType.categoryType(forIdentifier: HKCategoryValueSleepAnalysis.asleep))
+    //            let queryPredicate = NSCompoundPredicate(notPredicateWithSubpredicate: predicate, asleepPredicate)
+                let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)
+         
+                let query = HKSampleQuery(sampleType: sleepType, predicate: predicate, limit: 30, sortDescriptors: [sortDescriptor]) {
+                                                            (query, samples, error) in
+                                                    
+                                                guard
+                                                    error == nil,
+                                                samples == samples as? [HKCategorySample] else {
+                                                        print("Something went wrong getting sleep analysis: \(String(describing: error))")
+                                                        return
+                                                }
+                                                
+                                                let total = samples?.map(self.calculateSleepHours).reduce(0, {$0 + $1}) ?? 0
+                                                DispatchQueue.main.async {
+                                                    self.userSleepHours = total
+                                                }
+                
+                }
+                healthKit.execute(query)
+            }
+        }
+
     func calculateSleepHours(sample: HKSample) -> TimeInterval {
         
         let hours = sample.endDate.timeIntervalSince(sample.startDate) / 60 / 60

@@ -29,14 +29,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var meditationGoalLabel: UILabel!
     
     
-    @IBAction func datePickerChanged(_ sender: Any) {
+    @IBAction func datePickerChanged(_ sender: UIPickerView) {
 
         clearLabels()
+//        updateLabels()
         
     }
     
-    @IBAction func updateLabelButton(_ sender: Any) {
-        updateLabels()
+    @IBAction func updateLabelButton(_ sender: UIButton) {
+        readHealthData()
     }
     
     @IBOutlet weak var meditationProgressBar: UIProgressView!
@@ -47,6 +48,7 @@ class ViewController: UIViewController {
     
     //MARK: - Clear Labels
     func clearLabels() {
+        print("clearLabels")
         dietaryProgressBar.progress = 0.0
         sleepProgressBar.progress = 0.0
         activityProgressBar.progress = 0.0
@@ -62,6 +64,21 @@ class ViewController: UIViewController {
         activityGoalLabel.text = ""
         sleepGoalLabel.text = ""
         meditationGoalLabel.text = ""
+    }
+
+    //MARK: - Read Health Data
+    func readHealthData() {
+        print("readHealthData")
+            healthKit.readDietaryEnergy(date: datePicker.date)
+            healthKit.readActiveEnergy(date: datePicker.date)
+            healthKit.readBasalEnergy(date: datePicker.date)
+            healthKit.readMindfulMinutes(date: datePicker.date)
+            healthKit.readSleepAnalysis(date: datePicker.date)
+        //        healthKit.readSleep(date: datePicker.date)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.updateLabels()
+        }
     }
 
     //MARK: - Update Labels
@@ -88,6 +105,7 @@ class ViewController: UIViewController {
         }
         netCaloriesLabel.text = String("\(userNetString)")
         
+        //MARK: - Progress Bar Details
         let calculatedNetGoal = abs(Int(Float(healthKit.userDietaryEnergy - healthKit.userBasalEnergy - healthKit.userActiveEnergy) / Float(netCalorieGoal)) * 100)
         netGoalLabel.text = String("Goal: \(Int(netCalorieGoal)) | Percent: \(calculatedNetGoal)")
         
@@ -224,8 +242,6 @@ class ViewController: UIViewController {
         healthKit.isHealthKitAvailable()
         healthKit.getHealthKitPermission()
         
-        updateLabels()
-        
         meditationProgressBar.progress = 0.0
         meditationProgressBar.transform = meditationProgressBar.transform.scaledBy(x:1, y: 4)
         meditationProgressBar.layer.cornerRadius = 10
@@ -260,6 +276,8 @@ class ViewController: UIViewController {
         netProgressBar.clipsToBounds = true
         netProgressBar.layer.sublayers![1].cornerRadius = 10
         netProgressBar.subviews[1].clipsToBounds = true
+        
+        readHealthData()
 
     }
 
